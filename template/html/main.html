@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+
+		<title>
+			RNA病毒测序分析报告
+		</title>
+		<!-- Bootstrap core CSS -->
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="static/css/bootstrap.min.css">
+		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+		<!--<link rel="stylesheet" href="static/css/bootstrap-theme.min.css">-->
+		<!-- Optional Bootstrap Theme -->
+		<!--<link href="data:text/css;charset=utf-8," data-href="static/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">-->
+		<!-- Documentation extras -->
+		<link href="./static/css/docs.min.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="./static/js/html5shiv.js"></script>
+		<script src="./static/js//respond.min.js"></script>
+		<![endif]-->
+		<link href="./static/ccs/docxsearch.ccs" rel="stylesheet">
+		<link href="./static/css/mydoc.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="static/css/jquery.ad-gallery.css">
+		<link rel="stylesheet" type="text/css" href="static/css/font-awesome/css/font-awesome.min.css">
+		<!-- Favicons -->
+		<link rel="apple-touch-icon" href="">
+		<link rel="icon" href="">
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+		<!-- Docs page layout -->
+
+		<div class="container bs-docs-container">
+			<div class="row">
+
+				<!--导航部分-->
+				<div class="col-md-3">
+					<!--导航栏-->
+					<div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" role="complementary">
+						<ul class="nav bs-docs-sidenav text-right">
+							<li>
+								<a href="#a">
+									<img src="static/image/sidebar_icon_active_1.png">
+									1 技术介绍
+								</a>
+
+							</li>
+
+							<li>
+								<a href="#b">
+									<img src="static/image/sidebar_icon_active_2.png">
+									2 项目流程
+								</a>
+
+
+								<ul class="nav">
+									<li><a href="#b_1">2.1 实验流程</a>
+										<ul class="nav">
+											<li><a href="#b_1_1">2.1.1 RNA 样品检测</a></li>
+											<li><a href="#b_1_2">2.1.2 文库构建</a></li>
+											<li><a href="#b_1_3">2.1.3 cDNA 测序</a></li>
+										</ul>
+									</li>
+
+									<li><a href="#b_2">2.2 生物信息分析流程</a></li>
+								</ul>
+							</li>
+
+							<li>
+								<a href="#c">
+									<img src="static/image/sidebar_icon_active_3.png">
+									3 分析结果
+								</a>
+
+
+                                <ul class="nav">
+									<!-- <li><a href="#c_1">3.1 实验结果</a></li> -->
+									<li><a href="#c_1">3.1 拆分与质控说明</a></li>
+									  <ul class="nav">
+									  <li><a href="#c_1_1">3.1.1 拆分与质控说明</a></li>
+									  <li><a href="#c_1_2">3.1.2 质控结果统计</a></li>
+										</ul>
+									<li><a href="#c_2">3.2 序列比对</a></li>
+									<li><a href="#c_3">3.3 变异检测与注释</a></li>
+									<li><a href="#c_4">3.4 系统发生进化分析</a></li>
+
+								</ul>
+							</li>
+
+							<li>
+								<a href="#d">
+									<img src="static/image/sidebar_icon_active_4.png">
+									4 分析方法
+								</a>
+
+
+								<ul class="nav">
+									<li><a href="#d_1">4.1 软件及数据库</a></li>
+									<li><a href="#d_2">4.2 数据质控</a></li>
+									<li><a href="#d_3">4.3 变异检测与注释</a></li>
+								</ul>
+							</li>
+
+							<li>
+								<a href="#e">
+									<img src="static/image/sidebar_icon_active_7.png">
+									5 帮助文档
+								</a>
+
+								<ul class="nav">
+									<li><a href="#e_1">4.1 结果文件及数据说明</a></li>
+									<li><a href="#e_2">4.2 数据库介绍</a></li>
+										<ul class="nav">
+	                    <li><a href="#e_2_2">5.2.2 Refseq数据库</a></li>
+										</ul>
+									<li><a href="#e_3">4.3 常见文件格式</a></li>
+										<ul class="nav">
+											<li><a href="#e_3_1">5.3.1 fastq格式文件</a></li>
+											<li><a href="#e_3_2">5.3.2 fasta格式文件</a></li>
+										</ul>
+								</ul>
+							</li>
+
+							<li>
+								<a href="#f">
+									<img src="static/image/sidebar_icon_active_5.png">
+									6 参考文献
+								</a>
+							</li>
+
+							<li>
+								<a href="#g">
+									<img src="static/image/sidebar_icon_active_6.png">
+									7 联系我们
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<!--导航栏脚注-->
+					<div style="position:absolute;left:25%;bottom:20px;padding-right: 20px;max-width: 220px;">
+						<img src="static/image/nextomics_logo.png" width="100%" style="margin-bottom: 20px">
+						<p class="text-left" style="font-size: 12px">TEL：400-027-1221</p>
+						<p class="text-left" style="font-size: 12px">E-mail：project@grandomics.com</p>
+					</div>
+				</div>
+				<!--导航部分-->
+
+				<!--内容部分-->
+				<div class="col-md-7" role="main" id="main">
+					<!--cover-->
+					<div class="text-center" data-section-name="home" id="cover">
+						<h1 style="padding-top: 10%"></h1>
+						<h1 style="padding-top: 10%">RNA病毒</h1>
+						<h2>测序分析报告</h2>
+						<div align="left" style="padding-left: 30%; padding-top: 12%" >
+							<h3>项目名称：{{project}}</h3>
+							<h3>合同编号：{{id}}</h3>
+							<h3>测序平台：{{sequencer}}</h3>
+							<h3>分&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp析：{{author}}</h3>
+							<h3>审&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp核：{{reviewer}}</h3>
+							<h3 style="padding-bottom: 10%">日&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp期：{{year}}年{{month}}月{{day}}日</h3>
+						</div>
+
+						<h4>武汉未来组生物科技有限公司</h4>
+						<!--<hr style="margin-top: 22%; height:1px;border:none;border-top:1px dashed">-->
+					</div>
+					<!--cover-->
+
+					<!--a-->
+					<div class="bs-docs-section" id="content">
+						<h3 id="a" class="page-header">1 技术介绍</h3>
+						<p>从早期的Sanger测序到第二代高通量测序、再到现在的单分子测序技术（第三代高通量测序），DNA测序技术一直推动着生命科学研究的发展。</p>
+						<p>当第二代高通量测序技术进入成熟阶段后，读长过短、PCR扩增带来的偏向性等问题开始日益凸显；作为基因组学上新的转折点，以PacBio单分子实时测序技术及纳米孔单分子测序技术为首的第三代高通量测序技术（Third-generationSequencing）开始进入科研应用，从单分子水平上对DNA分子的实时测序，成功解决了二代测序几大困扰：极端 GC含量区域覆盖度低、高度重复区域无法较好地拼装、大片段变异难以准确检测、不能直接检测碱基修饰等问题。</p>
+						<p>Oxford Nanopore Technologies公司在2012年基因组生物学技术进展年会（AGBT）上发布了掌上型测序仪MinION及测序平台GridION，引起行业轰动，Oxford Nanopore平台不断升级，相继推出通量更高的PromethION及更小更便携SmidgION平台，相关科研论文也陆续发表，未来也将对数据错误率及平行测序的通量问题不断突破，为行业带来新的测序时代。</p>
+						<p><b>Nanopore商业化平台：MinION、GridION和PromethION</b></p>
+						<p>ONT牛津纳米孔测序技术作为第三代单分子实时测序技术，其原理是基于高分子膜两侧电压和其中的蛋白质纳米孔，当单分子DNA从纳米孔通过时，会引起孔两侧电位差来实现信号检测，而ATCG四种碱基的带电性质不一样，因此通过电信号的差异就能检测出通过的碱基类型，从而实现测序。</p>
+						<p>MinION测序仪是一款便携式测序设备，100g以下，体积10 x 3 x2 cm，含有一个MinION流动槽，其中有512个通道，可产出20G数据，通过USB与电脑连接，获取的电流信号会上传到服务器上转化为碱基序列。相对其他测序平台，MinION测序仪不仅便携，操作简便，而且成本低，1000美金即可获得MinION及相关试剂耗材，同时兼顾建库速度快特点。因为便携，操作方便，测序地点将不局限于实验室，可以在高山丛林，甚至可以在北极等极寒区域使用，2016年MinION测序仪还被带入太空这种极端环境中进行DNA测序。</p>
+						<p>GridION X5测序部分包含5个MinION流动槽，可根据项目实际运行情况，可单独使用或协同使用，在1个run的48小时内可生成高达100 Gb的数据，通过USB连接到计算机，在48小时内生成100 Gb的数据，有全面的数据处理能力。作为MinION延展性的高通量平台，GridION X5将与MinION结合应用到不同规模的项目中。</p>
+						<p>PromethION测序仪拥有48个流动槽，每个流动槽拥有3,000个纳米孔通道（总计144,000个），适用于大样本量的高通量快速测序。PromethION测序仪单次运行最多可产出6.2Tb数据/48h。各个测序芯片相互独立，既可单独运行也可多芯片同时运行。PromethION的应用为大样本测序及大型基因组测序带来了福音。</p>
+						<div class="content_img"><img src="images/image_fix/1.1_ont.png" width="60%"></div>
+						<h6>图1.1 Oxford Nanopore测序仪</h6>
+
+						<p><b>Nanopore测序应用于转录组研究</b></p>
+						<p>利用纳米孔测序技术，无论片段长度如何，都可以对整个片段进行测序。因此，全长cDNA可以作为单个片段进行测序，大幅减少了之后在多位点比对中的问题。</p>
+						<p>选择性剪接可以让每个基因产生大量的mRNA异构体，这又能反过来改变蛋白质的组成和功能。传统RNA测序技术产生的短读长丢失了位置信息，使得正确组装选择性剪切mRNA异构体存在挑战性。Nanopore cDNA测序能够生成完整的转录异构体序列，在剪接变体识别中的优势明显，使复杂选择性剪接转录组的从头（de novo）组装成为可能。</p>
+						<p>基于测序的RNA分析均需要将RNA转化为互补DNA（cDNA）链，在这一过程中，逆转录或扩增可引入偏倚。并且在PCR扩增过程中会丢失有关碱基修饰的所有信息。纳米孔测序能够直接进行RNA测序，使其可以克服所有的上述挑战，提供无偏倚、全长、链特异性的RNA序列。</p>
+
+					</div>
+					<!--a-->
+
+					<!--b-->
+					<div class="bs-docs-section" id="content">
+						<h3 id="b" class="page-header">2 项目流程</h3>
+						<h4 id="b_1">2.1 实验流程</h4>
+						<p>Nanopore测序技术[1]对样品DNA的要求非常高，未来组对客户提供的RNA进行严格的样品检测，从源头上保证质量。对检测合格的样品建库、上机测序，每个环节都严格把控，保证测序数据的准确性和Nanopore测序长读长的特性。</p>
+						<p>将通过用检测的RNA样品转录成cDNA，构建1D文库，利用Oxford Nanopore Technology测序仪{{sequencer}}对cDNA进行单分子测序，获得原始测序数据，实验流程如下图所示：</p>
+
+
+						<div class="content_img"><img src="images/image_fix/2.2_ont_workflow.png" width="60%"></div>
+						<h6>图2.1 Oxford Nanopore工作流程示意图</h6>
+
+						<br/>
+						<h5 id="b_1_1">2.1.1 RNA 样品检测</h5>
+						<p>采用以下五种方法检测RNA是否合格：</p>
+						<ul class="decimal-lower-roman">
+							<li>样品的外观性状是否含有异物；</li>
+							<li>1%琼脂糖电泳检测样品是否有降解及基因组DNA污染，凝胶电泳成像中28s和18s条带是否清晰；</li>
+							<li>NanoDrop™ One UV-Vis spectrophotometer (Thermo Fisher Scientific, USA)：检测RNA纯度(A260/A280在2.0-2.2之间，A260/A230在1.8-2.1之间)；</li>
+							<li>Qubit® 3.0 Fluorometer (Invitrogen, USA)：对RNA进行精确定量；</li>
+							<li>Agilent 2100 Bioanalyzer (Agilent technologies, USA)：检测RIN值和28S/18S (28s:18s≥1.5RIN≥8)。</li>
+						</ul>
+
+						<br/>
+						<h5 id="b_1_2">2.1.2 文库构建</h5>
+						<p>建库实验流程如下：</p>
+						<ul class="decimal-lower-roman">
+							<li>使用cDNA-PCR 测序试剂盒(Oxford Nanopore Technologies, SQK-PCS109)对检测合格的总RNA进行反转录，将总RNA反转录成cDNA第一链；</li>
+							<li>通过PCR选择并对全长cDNA进行扩增 (PCR循环数是按照优化后的进行扩增)；</li>
+							<li>(3)将测序接头连接到PCR产物上，完成测序文库的构建，使用Qubit精确地对建好的cDNA文库进行定量检测。</li>
+						</ul>
+						<div  class="content_img"><img src="images/image_fix/2.3_library_construct.png"  width="40%"></div>
+						<h6>图2.2 文库构建流程</h6>
+
+						<br/>
+						<h5 id="b_1_3">2.1.3 cDNA 测序</h5>
+						<p>启动ONT芯片，并将准备好的cDNA文库加载到芯片中，放入{{sequencer}}测序仪开始进行测序。</p>
+						<div class="content_img"><img src="images/image_fix/2.4_PromethION.png" width="60%" ></div>
+						<h6>图2.3 PromethION 单分子实时测序</h6>
+
+						<br/>
+						<h4 id="b_2">2.2 生物信息分析流程</h4>
+						<p>将测序完成后得到的原始数据进行basecalling之后，进行一系列的生物信息分析。对原始数据进行去接头、短序列、低质量序列过滤等处理。根据建库过程中在序列两端添加的Barcode标签序列区分不同样本的数据，对数据进行拆分，获取单个样品的数据。随后根据扩增引物信息，获取高完整度的扩增产物目标区域序列，进行下游一系列的生物信息学分析，包括序列比对、变异检测与注释以及系统发生进化分析等。整体流程图如下：</p>
+。</p>
+						<div  class="content_img"><img src="images/image_fix/2.5_bioinfo_workflow.png" width="20%"></div>
+						<h6>图2.4 生物信息分析流程图</h6>
+
+
+					</div>
+					<!--b-->
+
+					<!--c-->
+					<div class="bs-docs-section" id="content">
+						<h3 id="c" class="page-header">3 分析方法及结果</h3>
+
+						<!-- 3.1 数据统计及质控 -->
+						<h4 id="c_1">3.1 拆分与质控说明</h4>
+						  <p>Nanopore测序的下机数据保存格式为fast5格式（且文件较大），一般会将fast5格式进行basecalling后转换为fastq/fasta格式的有效数据结果交付给客户，方便进行下游分析。</p>
+
+						<h5 id="c_3_1">3.1.1 拆分与质控说明</h5>
+						  <p>测序数据的产生经过了RNA 提取、RNA反转录为cDNA、PCR扩增、建库加Barcode标签、测序多个步骤，这些步骤中产生的无效数据会对后续信息分析带来严重干扰，如测序接头序列，以及测序错误、低质量碱基等情况，必须通过一些手段将上述无效数据过滤掉，以保证分析结果的可靠性。主要通过以下手段进行数据质控：</p>
+							<ul class="decimal-lower-roman">
+								<li>使用qcat软件，根据Barcode试剂信息，拆分获取单个样品数据；</li>
+								<li>通过比对提取目标区域（不含引物信息）相关序列；</li>
+								<li>去除过长(>1kb)、过短(<150bp)的序列，去除低比对覆盖度(<80%)序列、去除低相似度序列(<75%)，从而获取高质量的相关序列；</li>
+							</ul>
+						<h5 id="c_3_2">3.1.2 质控结果统计</h5>
+						<p>该样项目用{{sequencer}}测序平台测序了{{sample_num}}个样本，总共产出{{raw_bases}} bp原始数据，通过质控的数据量为{{clean_bases}} bp，测序数据统计及读长分布如下所示：</p>
+
+						<h6>表3.1 测序数据统计 （详见<a href="./01_Data/raw.stat_reads.tsv">raw.stat_reads.tsv</a>和<a href="./01_Data/clean.stat_reads.tsv">clean.stat_reads.tsv</a>)</h6>
+						<div class="content_table">
+							<!-- <table border="1" align="center" id="big"> -->
+							<table class="table table-bordered table-striped table-hover" >
+								<thead>
+									<tr>
+										<th><b>Sample</b></th>
+										<th><b>Raw Bases(bp)</b></th>
+										<th><b>Raw Reads</b></th>
+										<th><b>Clean Bases(bp)</b></th>
+										<th><b>Clean Reads</b></th>
+										<th><b>Mean Length(bp)</b></th>
+										<th><b>Bases On Target(%)</b></th>
+										<th><b>Reads On Target(%)</b></th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for table in table_data %}
+									<tr>
+										<td><b>{{table.0}}</b></td>
+										<td>{{table.1}}</td>
+										<td>{{table.2}}</td>
+										<td>{{table.3}}</td>
+										<td>{{table.4}}</td>
+										<td>{{table.5}}</td>
+										<td>{{table.6}}</td>
+										<td>{{table.7}}</td>
+									</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+							<p class="tremark" style="font-size: 11px">
+							&nbsp;&nbsp;说明:</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Sample: 样本名称</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Raw Bases(bp)：原始数据碱基数目 (单位: bp)</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Raw Reads: 原始序列条数</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Clean Bases(bp): 质控后碱基数 (单位: bp)</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Clean Reads: 质控后序列条数</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Mean Length(bp): 过滤后reads的平均长度 (单位: bp)</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Bases On Target(%): 碱基中靶率（%）</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						  Reads On Target(%): reads中靶率（%）。</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</div>
+
+						<div class="content_img"><img src="images/alignment_identity.png" width="80%" ></div>
+						<h6>图3.1 质控后的reads与参考基因组的比对分布图</h6>
+						<br/>
+						<br/>
+
+						<!-- 3.2 序列比对 -->
+						<h4 id="c_2">3.2 序列比对</h4>
+						<p>使用minimap2软件，将获得的高质量序列比对至参考基因组。使用samtools软件对比对信息进行统计。结果如下：</p>
+						<h6>表3.2 比对覆盖度分布统计（详见<a href="./02_snp/stat_map_coverage.tsv">stat_map_coverage.tsv</a>）</h6>
+						<div class="content_table">
+							<!-- <table border="1" align="center" id="big"> -->
+							<table class="table table-bordered table-striped table-hover" >
+								<thead>
+									<tr>
+										<th><b>Sample</b></th>
+										<th><b>Refer Length(bp)</b></th>
+										<th><b>3x cov rate(%)</b></th>
+										<th><b>10x cov rate(%)</b></th>
+										<th><b>50x cov rate(%)</b></th>
+										<th><b>Reads Mapping bases(bp)</b></th>
+										<th><b>Reads mapping rate(%)</b></th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for table in table_coverage %}
+										<tr>
+											<td><b><a href="./02_snp/{{table.0}}.depth.png">{{table.0}}</a></b></td>
+											<td>{{table.1}}</td>
+											<td>{{table.2}}</td>
+											<td>{{table.3}}</td>
+											<td>{{table.4}}</td>
+											<td>{{table.5}}</td>
+											<td>{{table.6}}</td>
+										</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+							<p class="tremark" style="font-size: 11px">
+							&nbsp;&nbsp;说明:</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Sample: 样本名称</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Refer Length(bp)：参考基因组长度 (单位: bp)</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							3x cov rate(%): 参考基因组上被覆盖超过3次的碱基占比</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							10x cov rate(%): 参考基因组上被覆盖超过10次的碱基占比</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							50x cov rate(%): 参考基因组上被覆盖超过50次的碱基占比</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Reads Mapping bases(bp): 比对到参考基因组的碱基数 (单位: bp)</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Reads mapping rate(%): 比对到参考基因组的碱基占clean碱基的比例。</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							</div>
+						<div class="content_img"><img src="images/coverage.png" width="90%" ></div>
+						<h6>图3.2 比对到参考基因组上的覆盖度图</h6>
+						<br/>
+						<br/>
+
+						<!-- 3.3 变异检测与注释 -->
+						<h4 id="c_3">3.3 变异检测与注释</h4>
+						<p>基于上一步获得的Bam文件，使用Medaka软件进行变异检测，并对检测的变异进行过滤，获取高质量的变异信息。最后，使用snpEff软件对变异位点进行注释。过滤标准：</p>
+						<ul class="decimal-lower-roman">
+							<li>Medaka检出变异位点质量值Qual>=Q20；</li>
+							<li>异位点支持序列深度Depth>=5.</li>
+						</ul>
+						<p>每个样品的检测到的SNP数目整体情况统计如下表：</p>
+						<h6>表3.3 各样本SNP数目统计（详见<a href="./02_snp/stat.snp.tsv">stat_snp.tsv</a>）</h6>
+						<div class="content_table">
+							<!-- <table border="1" align="center" id="big"> -->
+							<table class="table table-bordered table-striped table-hover" align="center">
+								<thead>
+									<tr>
+										<th><b>Sample</b></th>
+										<th><b>SNP Number</b></th>
+										<th><b>Synonymous Variant</b></th>
+										<th><b>Missense Variant</b></th>
+										<th><b>Intergenic Region</b></th>
+										<th><b>Other</b></th>
+									</tr>
+								</thead>
+								<tbody>
+									{% for table in table_snp %}
+									<tr>
+										<td><b><a href="./02_snp/{{table.0}}.snps.gff">{{table.0}}</a></b></td>
+										<td>{{table.1}}</td>
+										<td>{{table.2}}</td>
+										<td>{{table.3}}</td>
+										<td>{{table.4}}</td>
+										<td>{{table.5}}</td>
+									</tr>
+									{% endfor %}
+								</tbody>
+							</table>
+							<p class="tremark" style="font-size: 11px">
+							&nbsp;&nbsp;说明:</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Sample: 样本名称</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							SNP Number：SNP的数目</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Synonymous Variant: 同义突变数</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Missense Variant: 非同义突变数</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Intergenic Region: 发生在基因间区的突变数</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Other: 其他类型的突变数（如：突变为终止密码子）</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</div>
+
+						<h4 id="c_4">3.4 系统发生进化分析</h4>
+						<p>根据获得的参考基因组变异信息以及覆盖度信息，进一步获得新的一致性基因组序列(Concensus sequence)，作为目标样本的真实基因组序列。使用mafft软件将新获得的基因组序列与已知的参考基因组集合并进行多序列比对，使用Fastree软件构建最大似然法系统发育进化树。</p>
+						<div class="content_img"><img src="images/tree.png" width="60%"></div>
+                        <h6>图3.3 系统进化树图</h6>
+						<br/>
+					<!--c-->
+
+					<div class="bs-docs-section" id="content">
+						<h3 id="d" class="page-header">4 分析方法</h3>
+						<h4 id="d_1">4.1 软件及数据库</h4>
+						<p>生物信息分析所用的软件及数据库信息如下。</p>
+						<h6>表4.1 分析所用软件信息</h6>
+						<div class="content_table">
+							<table class="table table-bordered table-striped table-hover" >
+								<thead>
+									<tr>
+										<th><b>Software</b></th>
+	                                    <th><b>Version</b></th>
+                                    	<th><b>Website</b></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><b>samtools</b></td>
+	                                    <td>{{software.samtools.version}}</td>
+	                                    <td><a href="https://github.com/samtools/samtools" target="_blank">https://github.com/samtools/samtools</a> </td>
+									</tr>
+									<tr>
+										<td><b>minimap2</b></td>
+																			<td>{{software.minimap2.version}}</td>
+																			<td><a href="https://github.com/lh3/minimap2" target="_blank">https://github.com/lh3/minimap2</a> </td>
+									</tr>
+									<tr>
+										<td><b>map_paf2reads</b></td>
+																			<td>{{software.map_paf2reads.version}}</td>
+																			<td><a href="https://github.com/zxgsy520/map_paf2reads" target="_blank">https://github.com/zxgsy520/map_paf2reads</a> </td>
+									</tr>
+									<tr>
+										<td><b>medaka</b></td>
+	                                    <td>{{software.medaka.version}}</td>
+	                                    <td><a href="https://github.com/nanoporetech/medaka" target="_blank">https://github.com/nanoporetech/medaka</a> </td>
+									</tr>
+									<tr>
+										<td><b>snippy</b></td>
+	                                    <td>{{software.snippy.version}}</td>
+	                                    <td><a href="https://github.com/tseemann/snippy" target="_blank">https://github.com/tseemann/snippy</a> </td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<h4 id="d_2">4.2 数据质控</h4>
+						<p>使用minimap2（参数：{{software.minimap2.option}}）将测序得到的reads与参考基因组（<a href="https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3/" target="_blank">MN908947</a>）进行比对，使用map_paf2reads（参数：{{software.map_paf2reads.option}}）去除低比对覆盖度(<80%)序列、去除低相似度序列(<75%)并对嵌合和自连的序列进行打断。</p>
+
+						<h4 id="d_3">4.3 变异检测与注释</h4>
+						<p>将质控后得到的reads与参考基因组进行比较，使用medaka（参数：{{software.medaka.option}}）进行snp分析，使用snippy（参数：{{software.snippy.option}}）进行SNP注释。</p>
+
+					</div>
+					<!--d-->
+					<div class="bs-docs-section" id="content">
+						<h3 id="e" class="page-header">5 帮助文档</h3>
+
+						<h4 id="e_1">5.1 结果文件及数据说明</h4>
+						<p>上传目录中有Readme.txt说明，详细介绍了每个文件所代表的内容。上传的结果数据文件多以文本格式为主(fa文件、txt文件、detail文件、xls文件等)。在Windows系统下查看文件，推荐使用Editplus或 UltraEdit作为文本浏览程序，或者使用PilotEdit Lite打开超大文本文件。在Unix或Linux系统下可以浏览较大的文本文件，用Less等操作命令可以顺利地查看。</p>
+						<p>报告文件含有SVG格式的图片文件，SVG是矢量化的图片文件，可以随意放大而不失真。要查看SVG格式的文件，请先安装SVG插件。</p>
+						<p>结果文件建议使用Excel或者EditPlus等专业文本编辑器打开。</p>
+
+
+						<table class="table table-hover">
+							<tbody>
+								<tr>
+									<td>├── 01_data</td>
+									<td>测序及数据质控结果目录</td>
+								</tr>
+								<tr>
+									<td>│&nbsp;&nbsp; ├── raw.stat_reads.tsv</td>
+									<td>ONT下机数据统计</td>
+								</tr>
+								<tr>
+									<td>│&nbsp;&nbsp; ├── clean.stat_reads.tsv</td>
+									<td>质控后的数据统计</td>
+								</tr>
+								<tr>
+									<td>│&nbsp;&nbsp; ├── *.clean_reads.fa.gz</td>
+									<td>质控后的序列</td>
+								</tr>
+								<tr>
+									<td>│&nbsp;&nbsp; ├── *.alignment_identity.png</td>
+									<td>质控后的reads与参考基因组的比对分布图</td>
+								</tr>
+								<tr>
+									<td>│&nbsp;&nbsp; ├── *.alignment_identity.pdf</td>
+									<td>质控后的reads与参考基因组的比对分布图</td>
+								</tr>
+
+								<tr>
+									<td>├── 02_snp</td>
+									<td>snp分析结果目录</td>
+								</tr>
+								<tr>
+									<td>│&nbsp;&nbsp; ├── stat_map_coverage.tsv</td>
+									<td>比对覆盖度分布统计</td>
+								</tr>
+								<tr>
+									<td>│&nbsp;&nbsp; ├── stat.snp.tsv</td>
+									<td>snp统计结果</td>
+								</tr>
+								<tr>
+									<td>│&nbsp;&nbsp; ├── *.concencus.fasta</td>
+									<td>各样本的concencus序列</td>
+								</tr>
+								<tr>
+									<td>│&nbsp;&nbsp; ├── *.snps.gff</td>
+									<td>各样本的snp注释结果</td>
+								</tr>
+								<tr>
+									<td>│&nbsp;&nbsp; ├── *.depth.png</td>
+									<td>各样本的覆盖深度图</td>
+								</tr>
+								<tr>
+									<td>│&nbsp;&nbsp; ├── *.depth.pdf</td>
+									<td>各样本的覆盖深度图</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<br/>
+						<h4 id="e_2">5.2 数据库介绍</h4>
+						<h5 id="e_2_1">5.2.1 Refseq数据库</h5>
+						<p>Reference Sequences(RefSeq)数据库是一个收录注释过的非冗余转录体、蛋白质和基因组序列数据库，是经过NCBI和其他组织校正的数据库，使用人类基因命名委员会定义的术语，并且包括了官方的基因符号和可选的符号。RefSeq序列是NCBI筛选过的非冗余数据库，一般可信度比较高。</p>
+						<h4 id="e_3">5.3 常见文件格式</h4>
+						<h5 id="e_3_1">5.3.1 fastq格式文件</h5>
+						<p>fastq文件中包含有测序数据的序列信息以及对应的质量值。每条read包含4 行信息，如下：</p>
+
+						<p><code>@HWI-ST531R:144:D11RDACXX:4:1101:1212:1946 1:N:0:ATTCCT</code></p>
+						<p><code>ATNATGACTCAAGCGCTTCCTCAGTTTAATGAAGCTAACTTCAATGCTGAGATCGTTGACGACATCGAATGGG</code></p>
+						<p><code>+ HWI-ST531R:144:D11RDACXX:4:1101:1212:1946 1:N:0:ATTCCT</code></p>
+						<p><code>?A#AFFDFFHGFFHJJGIJJJIICHIIIIJJGGHIIJJIIJIIJIHGI@FEHIIJBFFHGJJIIHHHDFFFFDCCCCEDDCDDCDEACC</code></p>
+						<br>
+						<p>其中第一行以“@”开头，为序列名称；第二行是碱基序列，由大写“ACGTN”组成，N表示测序未知的碱基；第三行以“+”开头，为序列 ID；第四行是对应序列的测序质量，以 ASCII 值表示，每个字母对应第 2 行每个碱基。</p>
+
+						<br>
+						<h5 id="e_3_2">5.3.2 fasta格式文件</h5>
+						<p>FASTA 格式是一种基于文本用于表示核苷酸序列或氨基酸序列的格式。在这种格式中碱基对或氨基酸用单个字母来编码。如下：</p>
+
+						<p><code>>tig00001 [topology=circular] [completeness=complete] [location=chromosome]</code></p>
+						<p><code>ATGAAAAAAGAAACAAGTAAGTTTACGAAAAAAGTCATCCTTGGTCAGCTTCTCATCTGT</code></p>
+						<p><code>ACCAGTTTTTTGGTATGGGCAGGGCAGACTGTTGCAGCAGAGGAGGTATCTCAGGGAGAA</code></p>
+						<p><code>CCAGTAGCAATCAACAATGAAACTCCACCTGTTATTGAAGCAAAACCACTTGTAGAAGCT</code></p>
+						<p><code>ACTCCATCAACTGAAACAGAACCTTCAACTCCAGAAGAAAAACAGGAGGAACCACAAGTA</code></p>
+						<p><code>GCTGGTAAAAATGTGGTAGAAGGGAAAAAGCCAGTAACCAACAGCCAGCATCAGATGGTT</code></p>
+						<p><code>TCTGAATTATCAACGGTCCCTTCTGTTTCTATAAAAAATCCAGATGCAGCTACCGATGGG</code></p>
+						<p><code>AGTGCTTACGGTAGTAGCGACGATGCCAATAGCAATACCAAAATCATTGCTGGTAAAGAA</code></p>
+						<p>序列文件的第一行是由大于号">"或分号";"打头的任意文字说明（习惯常用">"作为起始），用于序列标记。从第二行开始为序列本身，只允许使用既定的核苷酸或氨基酸编码符号。</p>
+
+					</div>
+					<!--d-->
+
+					<!--e-->
+					<div class="bs-docs-section" id="content">
+						<h3 id="f" class="page-header">6 参考文献</h3>
+						<ul class="decimal-leading-zero">
+							<li><a href="https://bmcresnotes.biomedcentral.com/articles/10.1186/1756-0500-2-88"target="_blank">Matsumoto, Y., Oota, H., Asaoka, Y. et al. Medaka: a promising model animal for comparative population genomics. BMC Res Notes 2, 88 (2009). </a></li>
+							<li><a href="https://www.medrxiv.org/content/10.1101/2020.03.04.20029538v1"target="_blank">Ming Wang, Aisi Fu, Ben Hu, et al. Nanopore target sequencing for accurate and comprehensive detection of SARS-CoV-2 and other respiratory viruses. </a></li>
+                            <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3679285/"target="_blank">Cingolani P, Platts A, Wang le L, et al. A program for annotating and predicting the effects of single nucleotide polymorphisms, SnpEff: SNPs in the genome of Drosophila melanogaster strain w1118; iso-2; iso-3. Fly (Austin). 2012;6(2):80‐92. doi:10.4161/fly.19695.</a></li>
+
+							<li>Mikhail Kolmogorov, Jeffrey Yuan, Yu Lin and Pavel Pevzner, "Assembly of Long Error-Prone Reads Using Repeat Graphs", Nature Biotechnology, 2019 doi:10.1038/s41587-019-0072-8.</li>
+							<li>Li, H., et al., The Sequence Alignment/Map format and SAMtools. Bioinformatics, 2009. 25(16): p. 2078-9.</li>
+							<li>Li, H., Minimap2: pairwise alignment for nucleotide sequences. Bioinformatics, 2018. 34(18): p. 3094-3100.</li>
+							<li>Camacho, C., et al., BLAST+: architecture and applications. BMC Bioinformatics, 2009. 10: p. 421.</li>
+							<li>Ashburner, M., et al., Gene ontology: tool for the unification of biology. The Gene Ontology Consortium. Nat Genet, 2000. 25(1): p. 25-9.</li>
+							<li>Jiang Hu, Junpeng Fan, Zongyi Sun, Shanlin Liu, NextPolish: a fast and efficient genome polishing tool for long read assembly. Bioinformatics, 2019. btz891.</li>
+
+						</ul>
+					</div>
+					<!--e-->
+
+					<!--f-->
+					<div class="bs-docs-section" id="content">
+						<h3 id="g" class="page-header">7 联系我们</h3>
+						<p>武汉未来组生物科技有限公司（Nextomics Biosciences Co., Ltd）于2011年8月8日成立于武汉光谷生物城，目前在北京生命科学园成立了兄弟公司希望组且在美国费城设立有分支机构。</p>
+						<p>作为一家专注于第三代测序技术服务的公司，未来组早在2013年就成功开发了基于PacBio第三代单分子实时测序平台的生物信息分析流程，于2016年创建了Sequel基因组学中心并于2017年9月成功搭建Oxford Nanopore测序平台。2018年初，未来组又获得了Nanopore认证服务供应商资质，并正式面向全球提供GridION/PromethION等平台的测序及生物信息学分析服务。</p>
+						<p>2018年7月，未来组迁至武汉软件新城智慧健康园，占地4500m2，成立了基因组编辑中心和武汉希望组医学检验实验室，且拥有PacBio、Oxford Nanopore、MGISEQ、BioNano光学图谱及Hi-C染色体构象捕获等技术和平台，同时在华为云、天河二号及阿里云上搭建高性能集群用于生信分析，为高等院校和科研院所提供动植物基因组、全长转录组、表观基因组、微生物基因组、宏基因组和结构变异检测等领域的科研服务。</p>
+						<p>通过三代测序生物信息学工具和流程的开发，未来组解决了复杂动植物基因组、微生物基因组、全长转录组、微生物群体研究及人类基因组变异检测等领域的技术瓶颈，并推出了“TOP1000昆虫基因组计划”、“个人参考基因组服务计划”、“华夏万人结构变异计划”等，推动了基因组学研究的升级换代。因为专注于三代测序技术开发和应用推广，未来组成为众多科研机构优先合作的三代测序基因组中心，已完成了数百个三代测序科研项目，合作发表了一系列高质量的三代技术文章。</p>
+						<p>未来组致力于打造世界领先的三代测序基因组中心，在承诺高标准交付指标的同时将进一步大幅压缩项目服务周期，为合作伙伴提供完善的基因测序分析服务。</p>
+
+						<div class="row" style="margin-top: 150px">
+							<div class="col-xs-10 col-xs-offset-1">
+
+								<div class="row">
+									<div class="col-xs-7 " style="background:url('static/image/line.jpg') no-repeat right ">
+										<table border=0 style="line-height:1">
+											<tr>
+												<td width=50 height=40>
+													<i class="fa fa-map-marker fa-2x"></i>
+												</td>
+												<td >
+													<b>ADDRESS</b><hr style="margin:0px; width:55px;"/>武汉市花城大道软件新城2期C11栋
+												</td>
+											</tr>
+											<tr>
+												<td width=50 height=40>
+													<i class="fa fa-phone fa-2x"></i>
+												</td>
+												<td>
+													<b>TELEPHONE</b><hr style="margin:0px; width:55px;"/>027-8778-2123
+												</td>
+											</tr>
+											<tr>
+												<td width=50 height=40>
+													<i class="fa fa-envelope fa-2x"></i>
+												</td>
+												<td>
+													<b>E-MAIL</b><hr style="margin:0px; width:55px;"/>sales-support@grandomics.com
+												</td>
+											</tr>
+											<tr>
+												<td width=50 height=40>
+													<i class="fa fa-globe fa-2x"></i>
+												</td>
+												<td>
+													<b>WEBSITE</b><hr style="margin:0px; width:55px;"/>www.nextomics.cn
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div class="col-xs-3 col-xs-offset-1" >
+										<div style="width:112px; padding-top:0px; text-align: center">
+											<img src="static/image/erweima.jpg">
+											<b><br/>未来组微信公众号</b>
+											<b>扫码立即关注</b>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!--f-->
+				</div>
+				<!--内容部分-->
+
+				<div class="col-md-2 hidden-print">
+					<button class="btn" style="position: fixed;top: 10px;right: 6%" onclick="myprint()">
+						<i class="fa fa-print fa-2x" aria-hidden="true"></i>
+					</button>
+				</div>
+
+			</div>
+			</div>
+
+		</div>
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="static/js/jquery.min.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="static/js/bootstrap.min.js"></script>
+		<script src="./static/js/docs.min.js"></script>
+		<!-- Analytics
+		================================================== -->
+		<!--<script src="./static/js/jquery.easing.1.3.js"></script>
+		<script src="./static/js/scrollify.min.js"></script>
+		<script src="./static/js/main.js"></script>-->
+		<script type="text/javascript" src="static/js/jquery.min.js"></script>
+		<script type="text/javascript" src="static/js/jquery.ad-gallery.js"></script>
+		<script type="text/javascript" src="static/js/zzsc.js"></script>
+		<!--<script type="text/javascript" src="static/js/html2canvas.js"></script>
+		<script type="text/javascript" src="static/js/jspdf.debug.js"></script>-->
+		<script>
+			$(document).ready(function(){
+				//$("#cover").css("height",$(window).height()); //封面高度为屏幕高度
+				$("#cover").css("height", 1250);
+				// $("img").attr("crossorigin","*");
+			});
+			/*在ad-gallery插件的基础上添加了图片搜索的功能
+			*实现：匹配图片文件名的开头，匹配到的图片显示，未匹配的不显示，为空则全部显示
+			*/
+			function genescarh(t){
+				// var img_list_e = t.parent().nextAll(".ad-nav").find(".ad-thumb-list");
+				var img_list_e = t.parent().nextAll(".ad-nav").find(".ad-thumb-list").find("img");
+				// console.log(t.val())
+				var reg=new RegExp("^"+t.val());
+				$(".ad-thumbs").animate({scrollLeft: '0px'}); //每次搜索将预览图置左
+				for(var i=0;i<img_list_e.length;i++){
+					var img_name = img_list_e[i].getAttribute("src").split("/").pop();
+					if(reg.test(img_name)){
+						// console.log(img_list_e[i]);
+						img_list_e[i].style.display="inline";
+					}else{
+						// console.log(img_list_e[i]);
+						img_list_e[i].style.display="none";
+					}
+				}
+			}
+			function download_pdf(){
+				// var pdf = new jsPDF('p','pt','a4');
+				// pdf.internal.scaleFactor = 1;
+				// var options = {
+										// 		pagesplit: true
+				// };
+				// //$('.pdf-wrapper')
+				// pdf.addHTML($("#main"),options,function() {
+							// 	pdf.save('web1111.pdf');
+				// });
+			}
+			/*@打印pdf函数，使用浏览器打印功能
+			*将显示不全的表格和导航图片都显示出来
+			*/
+			function myprint(){
+				// console.log($("table.table"));
+				//
+				for(var i=0;i<$("table.table").length;i++){
+					$('table.table')[i].setAttribute('style','TABLE-LAYOUT:fixed;WORD-BREAK:break-all');
+				}
+				$(".ad-gallery").each(function(){
+					$(this).addClass("hidden-print");
+					if (!$(this).find('.ad-my').length){
+						// console.log($(this));
+						$(this).after('<div class="ad-my"></div>');
+						$(this).children(".ad-nav").find('img').each(function(){
+							$(".ad-my").append('<img src=' + this.src + '>');
+						})
+					}
+
+				});
+				window.print();
+				$("table.table").each(function(){
+					$(this).removeAttr('style');
+				});
+				$(".ad-my").remove();
+			}
+		</script>
+	</body>
+</html>
